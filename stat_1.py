@@ -1,14 +1,7 @@
-# Afficher valeur de statistique
-
-# Valeur 
-# effectif
-
-
-
 class Statistique:
-    def __init__(self):
-        self.valeur = []
-        self.effectif = []
+    def __init__(self, val = [], effec = []):
+        self.valeur = val
+        self.effectif = effec
 
     def ajout(self, val, effectif = 1):
         for ranger in range(len(self.valeur)):
@@ -119,37 +112,39 @@ class Statistique:
     def etendu(self): # étendue = plus grand - plus petit
         return self.plusGrand() - self.plusPetit()
 
-s = Statistique()
 
-while True:
-    try:
-        val = input("Valeur (ou quitter): ")
-        if val == "q" or val == "quitter":
-            break
 
-        val = float(val)
-        effectif = input("Effectif : ")
-        effectif = int(effectif)
-    except ValueError:
-        # 1 - choisir un nombre entier
-        print("\n Erreur : veiller saisir un nombre !")
-    else:
-        s.ajout(val, effectif)
+# while True:
+#     try:
+#         val = input("Valeur (ou quitter): ")
+#         if val == "q" or val == "quitter":
+#             break
 
-print()
-print("--------------------------------")
-s.getValeur()
-s.getEffectif()
-print()
+#         val = float(val)
+#         effectif = input("Effectif : ")
+#         effectif = int(effectif)
+#     except ValueError:
+#         # 1 - choisir un nombre entier
+#         print("\n Erreur : veiller saisir un nombre !")
+#     else:
+#         s.ajout(val, effectif)
 
-s.getFrequence()
-s.getFrequencePourcent()
-print(f"Moyenne : {s.moyenne()}")
-print(f"Mediane : {s.mediane()}")
-print()
+def affiche():
+    s = Statistique([12.2, 13.2, 5.5], [3, 3, 3])
+    print()
+    print("--------------------------------")
+    s.getValeur()
+    s.getEffectif()
+    print()
 
-print(f"Plus petit element : {s.plusPetit()}")
-print(f"Plus grand element : {s.plusGrand()}")
-print(f"Etendu : {s.etendu()}")
-print()
-print("--------------------------------")     
+    s.getFrequence()
+    s.getFrequencePourcent()
+    print(f"Moyenne : {s.moyenne()}")
+    print(f"Mediane : {s.mediane()}")
+    print()
+
+    print(f"Plus petit element : {s.plusPetit()}")
+    print(f"Plus grand element : {s.plusGrand()}")
+    print(f"Etendu : {s.etendu()}")
+    print()
+    print("--------------------------------")     
