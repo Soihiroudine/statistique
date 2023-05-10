@@ -28,20 +28,28 @@ class Statistique:
         self.fusion(T, debut, fin, milieu)
 
     def getValeur(self):
+        chaine = ""
         print("Valeur : ", end="")
         for ranger in range(len(self.valeur)):
             if ranger+1 == len(self.valeur):
+                chaine += str(self.valeur[ranger])
                 print(self.valeur[ranger])
             else:
+                chaine += str(self.valeur[ranger])+", "
                 print(self.valeur[ranger], end=", ")
+        return chaine
 
     def getEffectif(self):
+        chaine = ""
         print("Effectif : ", end="")
         for ranger in range(len(self.effectif)):
             if ranger+1 == len(self.effectif):
+                chaine += str(self.effectif[ranger])
                 print(self.effectif[ranger])
             else:
+                chaine += str(self.effectif[ranger])+", "
                 print(self.effectif[ranger], end=", ")
+        return chaine
 
     def getEffectifDeValeur(self, val):
         sommeEffect = 0
