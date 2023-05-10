@@ -9,7 +9,7 @@ def valuer():
         noteVal.ajout(int(valeurText.get()), int(effectifText.get()))
     except:
         messagebox.showerror("Erreur", "Veiller mettre des informations correct !")
-
+        return 0
     change1.set(f"{noteVal.getValeur()}")
     change2.set(f"{noteVal.getEffectif()}")
 
