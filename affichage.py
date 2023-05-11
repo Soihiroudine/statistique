@@ -6,7 +6,7 @@ noteVal = st.Statistique()
 
 def valuer(): 
     try:
-        noteVal.ajout(int(valeurText.get()), int(effectifText.get()))
+        noteVal.ajout(float(valeurText.get()), int(effectifText.get()))
     except:
         messagebox.showerror("Erreur", "Veiller mettre des informations correct !")
         return 0
