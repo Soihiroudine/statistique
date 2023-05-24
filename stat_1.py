@@ -5,10 +5,10 @@ class Statistique:
         self.valeur = val # [valeur, effectif]
 
     def ajout(self, val, effectif = 1):
-        for ranger in range(len(self.valeur)):
-            if val == self.valeur[ranger][0]:
-                self.valeur[ranger][1] += effectif
-                return [val, effectif]   
+        # for ranger in range(len(self.valeur)):
+        #     if val == self.valeur[ranger][0]:
+        #         self.valeur[ranger][1] += effectif
+        #         return [val, effectif]   
         self.valeur.append([val, effectif])
         tri.triFusion(self.valeur)
         return [val, effectif]
@@ -105,41 +105,41 @@ class Statistique:
     def etendu(self): # étendue = plus grand - plus petit
         return self.plusGrand() - self.plusPetit()
 
-s = Statistique()
+# s = Statistique()
 
-while True:
-    try:
-        val = input("Valeur (ou quitter): ")
-        if val == "q" or val == "quitter":
-            break
+# while True:
+#     try:
+#         val = input("Valeur (ou quitter): ")
+#         if val == "q" or val == "quitter":
+#             break
 
-        val = float(val)
-        effectif = input("Effectif : ")
-        effectif = int(effectif)
-    except ValueError:
-        # 1 - choisir un nombre entier
-        print("\n Erreur : veiller saisir un nombre !")
-    else:
-        s.ajout(val, effectif)
+#         val = float(val)
+#         effectif = input("Effectif : ")
+#         effectif = int(effectif)
+#     except ValueError:
+#         # 1 - choisir un nombre entier
+#         print("\n Erreur : veiller saisir un nombre !")
+#     else:
+#         s.ajout(val, effectif)
 
-def affiche():
-    print()
-    print("--------------------------------")
-    s.getValeur()
-    s.getEffectif()
-    print()
+# def affiche():
+#     print()
+#     print("--------------------------------")
+#     s.getValeur()
+#     s.getEffectif()
+#     print()
 
-    s.getFrequence()
-    s.getFrequencePourcent()
-    print(f"Moyenne : {s.moyenne()}")
-    print(f"Mediane : {s.mediane()}")
-    print()
+#     s.getFrequence()
+#     s.getFrequencePourcent()
+#     print(f"Moyenne : {s.moyenne()}")
+#     print(f"Mediane : {s.mediane()}")
+#     print()
 
-    print(f"Plus petit element : {s.plusPetit()}")
-    print(f"Plus grand element : {s.plusGrand()}")
-    print(f"Etendu : {s.etendu()}")
-    print()
-    print("--------------------------------")     
+#     print(f"Plus petit element : {s.plusPetit()}")
+#     print(f"Plus grand element : {s.plusGrand()}")
+#     print(f"Etendu : {s.etendu()}")
+#     print()
+#     print("--------------------------------")     
 
 
-affiche()
+# affiche()

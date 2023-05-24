@@ -3,6 +3,10 @@ import tkinter as tk
 from tkinter import messagebox
 
 noteVal = st.Statistique()
+def moy():
+    moyenne = tk.Label(fenetre, text="Moyenne : "+str(noteVal.moyenne()))
+    moyenne.pack(side="bottom")
+
 
 def valuer(): 
     try:
@@ -74,6 +78,9 @@ change2 = tk.StringVar()
 effAffiche = tk.Label(effectif2, textvariable=change2)
 change2.set("None")
 effAffiche.pack(side="right")
+
+tk.Button(fenetre, text="Clicker", command=moy).pack()
+
 
 fenetre.mainloop()
     
